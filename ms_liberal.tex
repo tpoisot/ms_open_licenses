@@ -1,0 +1,79 @@
+\documentclass[letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{authblk}
+\usepackage{hyperref}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+
+\definecolor{myColor}{HTML}{006699}
+
+\hypersetup {
+  colorlinks = true, linkcolor = myColor, citecolor = myColor, urlcolor = myColor,
+  pdfauthor = {Desjardins-Proulx, Philippe},
+}
+
+\renewcommand\Affilfont{\itshape\small}
+\setcounter{section}{-1} % Sections too start at 0 :P
+
+\begin{document}
+
+\title{Restrictive Licenses for Code and Data Hinder Science}
+% Find better title
+\author[0,1,2]{Philippe Desjardins-Proulx}
+\affil[0]{email: \href{mailto:philippe.d.proulx@gmail.com}{philippe.d.proulx@gmail.com}}
+\affil[1]{Quebec Center for Biodiversity Science, Canada.}
+\affil[2]{Universit\'e du Qu\'ebec, Canada.}
+\date{\today}
+\maketitle
+
+\section{Introduction}
+
+% Importance of data / code. Data mining, more collaboration = more problems with licenses.
+
+We define restrictive licenses as those that put many restrictions on code/data
+reuse, and oppose them to liberal licenses with almost no restrictions. For
+data, the CC0 and CC-BY are liberal, unlike the creative commons with the NC
+(non-commercial) or SA (share-alike) clauses. For code, the MIT/BSD/Apache
+licenses are generally considered permissive and liberal, while the GPL is a
+copy-left license that puts many restrictions on code reuse (see BOX 1). The
+temptation to add restrictions can be strong. After all, programmers spend
+hours building high-quality software, and field scientists spend equally long
+hours collecting data. Why would you allow your code to be used without 
+restrictions?
+
+The question of licensing invariably leads to complex philosophical questions.
+Does \emph{open} means to let others do as they like with data and code? Or,
+does \emph{open} means we need to restrict usage so the data/code would never
+be used in a closed environment? Instead of rehashing this debate, we will
+focus on two practical problems with restrictive licenses. (1) Restrictive
+licenses cause problems downstream, something we cannot afford in a world of
+Big Data and massive data-sets. (2) Restrictive licenses are mired with legal
+ambiguities. They are complex to understand, and complex to apply across
+countries with different legal systems.
+
+\section{Downstream problems}
+
+\section{The case for simplicity}
+
+Most of us would rather do science and focus on solving problems than discuss
+legal issues.  And licenses can be really complex, potentially different
+countries having different interpretations.  Recently, a German count
+
+Liberal licenses are simple. Code under the MIT or BSD licenses can be used by
+anyone: liberal license, GPL users, and proprietary. Restrictive open licenses
+are often less accessible than proprietary code/data: if you want to build a
+program with your MIT code, you cannot use the GNU Scientific Library (REF)
+without adopting the GPL for your executable, but you can use the proprietary
+Intel Math Kernel.
+
+Manuscripts can be written openly with git \cite{ram13}.
+
+% I looked at a bunch of trending repositories on github and 100% of them were under a liberal
+% license. I'll get more data, but it seems there is a pretty strong trend toward liberal
+% licenses. 
+% -- PhDP
+
+\bibliography{../refs}
+\bibliographystyle{plain}
+
+\end{document}
+
