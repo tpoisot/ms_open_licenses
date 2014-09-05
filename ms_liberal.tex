@@ -17,7 +17,6 @@
 \begin{document}
 
 \title{Restrictive Licenses for Code and Data Hinder Science}
-% Find better title
 \author[0,1,2]{Philippe Desjardins-Proulx}
 \affil[0]{email: \href{mailto:philippe.d.proulx@gmail.com}{philippe.d.proulx@gmail.com}}
 \affil[1]{Quebec Center for Biodiversity Science, Canada.}
@@ -27,17 +26,22 @@
 
 \section{Introduction}
 
-% Importance of data / code. Data mining, more collaboration = more problems with licenses.
+The rapid increase in data, along with more accessible tools for analysis, is
+paving the way for data-intensive science \cite{hey09}. On a practical side, it
+means more data-sets, with many built with many smaller data-sets, and more
+code to analyze the data-sets. It also means scientists have to select
+licenses for their code and data \cite{mor12}. In this short opinion, we
+argue that complex restrictive licenses should be avoided for code and data.
 
 We define restrictive licenses as those that put many restrictions on code/data
-reuse, and oppose them to liberal licenses with almost no restrictions. For
-data, the CC0 and CC-BY are liberal, unlike the creative commons with the NC
+reuse, and oppose them to permissive licenses with almost no restrictions. For
+data, the CC0 and CC-BY are permissive, unlike the creative commons with the NC
 (non-commercial) or SA (share-alike) clauses. For code, the MIT/BSD/Apache
 licenses are generally considered permissive and liberal, while the GPL is a
-copy-left license that puts many restrictions on code reuse (see BOX 1). The
+copyleft license that puts many restrictions on code reuse (see BOX 1). The
 temptation to add restrictions can be strong. After all, programmers spend
 hours building high-quality software, and field scientists spend equally long
-hours collecting data. Why would you allow your code to be used without 
+hours collecting data. Why would you allow your code to be used without
 restrictions?
 
 The question of licensing invariably leads to complex philosophical questions.
@@ -50,29 +54,79 @@ Big Data and massive data-sets. (2) Restrictive licenses are mired with legal
 ambiguities. They are complex to understand, and complex to apply across
 countries with different legal systems.
 
+\section{Box 1: License Madness 101}
+
+\begin{table}
+  \centering
+  \caption{\bf{What code can you use given your artifact's license?}}
+  \begin{tabular}{|l|ccc|}
+  \hline
+  Artifact              & Permissive & Copyleft & Proprietary \\
+  \hline
+  Permissive            & Yes        & No       & No          \\
+  Copyleft              & Yes        & Yes      & No          \\
+  Proprietary           & Yes        & No       & Yes         \\
+  \hline
+  \end{tabular}
+  \label{table:codelicenses}
+\end{table}
+
+Table \ref{table:codelicenses} shows what code you use given the license you
+want to have for your artifact. The 'artifact' is what you end up executing.
+It is a suble but important point: you can license your code under a permissive
+license and use copyleft code for your project, but when the code is compiled
+to be executed it has to be distributed under the GPL license. This table is a
+simplification in other ways. For example, GPL code can link to proprietary
+code if it is a "system library". Also, while the basic idea of the GPL license is
+that you need to distribute code with artifacts, it is possible for a company
+to hold a large GPL codebase without ever giving the code if they don't need to
+distribute the software directly (which is common for companies operating on
+the cloud). There are many other subtleties, and most of them have not been
+tested in court.
+
 \section{Downstream problems}
 
-\section{The case for simplicity}
+One of the most exiting prospect of Big Data is the possibility of analyzing
+and learning from large comprehensive data-sets. It has been argued that
+large data-sets are ``unreasonably effective'', that simple approaches often
+work surprisingly well when provided with enough data \cite{hal09}. Unfortunately,
+restriction accumulate. To be truly CC-BY, a data-set has to use only CC0 and
+CC-BY data-sets. Once data-set with more restrictions are added, the data-set
+cannot be used without these restrictions, unless of course the restrictive
+data-sets are removed.
 
-Most of us would rather do science and focus on solving problems than discuss
-legal issues.  And licenses can be really complex, potentially different
-countries having different interpretations.  Recently, a German count
-
-Liberal licenses are simple. Code under the MIT or BSD licenses can be used by
-anyone: liberal license, GPL users, and proprietary. Restrictive open licenses
-are often less accessible than proprietary code/data: if you want to build a
-program with your MIT code, you cannot use the GNU Scientific Library (REF)
-without adopting the GPL for your executable, but you can use the proprietary
-Intel Math Kernel.
-
-Manuscripts can be written openly with git \cite{ram13}.
+Source code face similar issues. Roughly half of the open source code is
+under the copyleft GPL license, and thus cannot be used with permissive
+code. This has led to strange situations, such as motivating the LLVM project
+to write from scratch a new C++ standard library instead of collaborating
+with the existing GNU project.
 
 % I looked at a bunch of trending repositories on github and 100% of them were under a liberal
 % license. I'll get more data, but it seems there is a pretty strong trend toward liberal
 % licenses. 
 % -- PhDP
 
-\bibliography{../refs}
+\section{The case for simplicity}
+
+Most of us would rather do science and focus on solving problems than discuss
+legal issues.  And licenses can be really complex, potentially different
+countries having different interpretations. Recently, a German court judged
+that the creative commons with non-commercial clause could not be used by
+a non-commercial entity. %(REF + mode details)
+
+Liberal licenses are simple. Code under the MIT or BSD licenses can be used by
+anyone. Restrictive open licenses are often less accessible than proprietary
+code/data: if you want to build a program with your MIT code, you cannot use
+the GNU Scientific Library without adopting the GPL for your executable, but
+you can use the proprietary Intel Math Kernel.
+
+Manuscripts can be written openly with git \cite{ram13}.
+
+\section{Acknowledgements}
+
+Carter T. Schonwald for a clarification on the GPL license.
+
+\bibliography{refs}
 \bibliographystyle{plain}
 
 \end{document}
