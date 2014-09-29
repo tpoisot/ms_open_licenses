@@ -28,23 +28,33 @@
 
 \section{Introduction}
 
-The rapid increase in data, along with more accessible tools for analysis, is
-paving the way for data-intensive science \cite{hey09}. On a practical side, it
-means more data-sets, with many built with many smaller data-sets, and more
-code to analyze the data-sets. It also means scientists have to select
-licenses for their code and data \cite{mor12}. In this short opinion, we
-argue that complex restrictive licenses should be avoided for code and data.
+Data-intensive science is made more common by the joint increase in the availability
+and discoverability of data, and computational tools for analysis and visualization
+\cite{hey09}. Large datasets emerge from the continuous aggregation of small data
+(for its first ten years, GenBank grew exponentially despite most studies contributing
+less than a few dozen sequences). In a similar way, software packages emerge through
+the curation and homogeneization of bits of code made for a very particular analysis
+(the development of \texttt{R} super-packages like \texttt{ape} or \texttt{vegan} are
+a prime example). Although the usefulness of this large data or software packages is
+recognized (in that they enable high-accessibility, low-overhead computational science),
+it is time to adress how the use of complex, restrictive, or otherwise "viral" licenses
+can eventually slow this practice down, or make it a legal clusterfuck \cite{mor12}.
+In this short opinion, we argue that such licenses should be avoided for code and data
+alike, and provide recommendations of licensing options that are conducive to the
+continued growth of computational tools.
 
 We define restrictive licenses as those that put many restrictions on code/data
 reuse, and oppose them to permissive licenses with almost no restrictions. For
 data, the CC0 and CC-BY are permissive, unlike the creative commons with the NC
-(non-commercial) or SA (share-alike) clauses. For code, the MIT/BSD/Apache
+(non-commercial) or SA (share-alike) clauses. 
+% CC-BY is BAAAAAD for data because of attribution stacking, I think it should be removed
+For code, the MIT/BSD/Apache
 licenses are generally considered permissive and liberal, while the GPL is a
-copyleft license that puts many restrictions on code reuse (see BOX 1). The
-temptation to add restrictions can be strong. After all, programmers spend
-hours building high-quality software, and field scientists spend equally long
-hours collecting data. Why would you allow your code to be used without
-restrictions?
+copyleft license that puts many restrictions on code reuse (see BOX 1). There are a number
+of reasons for which code and data should be considered similarly when developing best licensing practices;
+both require intensive work to produce (which people not familiar tend to overlook),
+both are important and structuring research products (despite being far less valued than
+papers), and scientists are developing new mechanisms to grant credit for both.
 
 The question of licensing invariably leads to complex philosophical questions.
 Does \emph{open} means to let others do as they like with data and code? Or,
